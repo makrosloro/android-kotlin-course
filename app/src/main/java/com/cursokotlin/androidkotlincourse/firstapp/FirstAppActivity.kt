@@ -1,5 +1,6 @@
 package com.cursokotlin.androidkotlincourse.firstapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -28,7 +29,10 @@ class FirstAppActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             val name = etName.text.toString()
             if (name.isNotEmpty()) {
-                Log.i("MakrosDev", "Click en btnStart > $name")
+//                Log.i("MakrosDev", "Click en btnStart > $name")
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("EXTRA_NAME", name)
+                startActivity(intent)
             }
 
         }
